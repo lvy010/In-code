@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内推码宝典 - 计算机求职内推信息整合平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-handshake"></i>
+                <span>内推码宝典</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">首页</a>
+                <a href="#about" class="nav-link">关于</a>
+                <a href="#stats" class="nav-link">数据统计</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 头部区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>计算机求职内推码整合平台</h1>
+                <p>聚合牛客、力扣、小红书、脉脉等平台的最新内推信息，助力您的求职之路</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalJobs">0</span>
+                        <span class="stat-label">总职位数</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="todayUpdate">0</span>
+                        <span class="stat-label">今日更新</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="platformCount">4</span>
+                        <span class="stat-label">数据来源</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 筛选区域 -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <h2>筛选职位</h2>
+                <div class="filter-grid">
+                    <!-- 职位类型筛选 -->
+                    <div class="filter-group">
+                        <label>职位类型</label>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-type="all">全部</button>
+                            <button class="filter-btn" data-type="校招">秋招</button>
+                            <button class="filter-btn" data-type="社招">社招</button>
+                            <button class="filter-btn" data-type="实习">实习</button>
+                        </div>
+                    </div>
+
+                    <!-- 技术方向筛选 -->
+                    <div class="filter-group">
+                        <label>技术方向</label>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-direction="all">全部</button>
+                            <button class="filter-btn" data-direction="前端">前端开发</button>
+                            <button class="filter-btn" data-direction="后端">后端开发</button>
+                            <button class="filter-btn" data-direction="算法">算法工程师</button>
+                            <button class="filter-btn" data-direction="数据">数据分析</button>
+                            <button class="filter-btn" data-direction="产品">产品经理</button>
+                            <button class="filter-btn" data-direction="测试">测试工程师</button>
+                        </div>
+                    </div>
+
+                    <!-- 数据来源筛选 -->
+                    <div class="filter-group">
+                        <label>数据来源</label>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-source="all">全部</button>
+                            <button class="filter-btn" data-source="牛客">牛客网</button>
+                            <button class="filter-btn" data-source="力扣">力扣</button>
+                            <button class="filter-btn" data-source="小红书">小红书</button>
+                            <button class="filter-btn" data-source="脉脉">脉脉</button>
+                        </div>
+                    </div>
+
+                    <!-- 搜索框 -->
+                    <div class="filter-group">
+                        <label>关键词搜索</label>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="搜索公司名、职位名称...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 职位列表 -->
+        <section class="jobs-section">
+            <div class="jobs-container">
+                <div class="section-header">
+                    <h2>内推职位</h2>
+                    <div class="section-actions">
+                        <button class="refresh-btn" id="refreshData">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新数据
+                        </button>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="date">按发布时间</option>
+                            <option value="company">按公司名称</option>
+                            <option value="position">按职位名称</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="jobs-grid" id="jobsGrid">
+                    <!-- 职位卡片将通过 JavaScript 动态生成 -->
+                </div>
+
+                <div class="loading" id="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>加载中...</span>
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>暂无匹配结果</h3>
+                    <p>请尝试调整筛选条件或搜索关键词</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>内推码宝典</h3>
+                    <p>专业的计算机求职内推信息整合平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>数据来源</h4>
+                    <ul>
+                        <li>牛客网</li>
+                        <li>力扣</li>
+                        <li>小红书</li>
+                        <li>脉脉</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p>如有问题或建议，欢迎联系</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 内推码宝典. 数据每日更新，仅供参考</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
