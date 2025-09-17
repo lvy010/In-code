@@ -6,22 +6,26 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --secondary-color: #64748b;
-    --accent-color: #059669;
-    --danger-color: #dc2626;
-    --warning-color: #d97706;
-    --background-color: #f8fafc;
+    /* 马卡龙浅蓝色调色板 */
+    --primary-color: #a8d8ea;
+    --primary-hover: #9ac5d4;
+    --primary-light: #c9e6f2;
+    --primary-dark: #7fb8d1;
+    --secondary-color: #b8c6db;
+    --accent-color: #8fced9;
+    --success-color: #a8e6cf;
+    --warning-color: #ffd3a5;
+    --danger-color: #ffaaa5;
+    --background-color: #f5f9fb;
     --surface-color: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #64748b;
-    --border-color: #e2e8f0;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --border-radius: 0.5rem;
-    --transition: all 0.2s ease-in-out;
+    --text-primary: #2c3e50;
+    --text-secondary: #7fb3d3;
+    --border-color: #d1e7f0;
+    --shadow-sm: 0 1px 2px 0 rgb(168 216 234 / 0.15);
+    --shadow-md: 0 4px 6px -1px rgb(168 216 234 / 0.2), 0 2px 4px -2px rgb(168 216 234 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(168 216 234 / 0.25), 0 4px 6px -4px rgb(168 216 234 / 0.15);
+    --border-radius: 0.75rem;
+    --transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -33,12 +37,13 @@ body {
 
 /* 导航栏 */
 .navbar {
-    background: var(--surface-color);
+    background: linear-gradient(90deg, var(--surface-color) 0%, var(--primary-light) 100%);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -91,15 +96,52 @@ body {
 
 /* 英雄区域 */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
-    color: white;
+    /* 马卡龙浅蓝色渐变背景 */
+    background: linear-gradient(135deg, rgba(168, 216, 234, 0.95) 0%, rgba(154, 197, 212, 0.95) 50%, rgba(127, 184, 209, 0.95) 100%), 
+                url('page.png'),
+                linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-primary);
     padding: 4rem 1rem;
     text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(168, 216, 234, 0.1);
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-slogan {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    text-shadow: 2px 2px 4px rgba(168, 216, 234, 0.5);
+    animation: pulse 2s infinite;
+    background: linear-gradient(45deg, var(--primary-dark), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
 
 .hero h1 {
@@ -210,14 +252,17 @@ body {
 
 .filter-btn:hover {
     background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+    color: var(--text-primary);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .filter-btn.active {
     background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+    color: var(--text-primary);
+    border-color: var(--primary-hover);
+    box-shadow: var(--shadow-md);
 }
 
 .search-box {
@@ -289,7 +334,7 @@ body {
 
 .refresh-btn {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-primary);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
@@ -300,10 +345,13 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .refresh-btn:hover {
-    background: #047857;
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .sort-select {
@@ -333,8 +381,10 @@ body {
 }
 
 .job-card:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, var(--surface-color) 0%, var(--primary-light) 100%);
 }
 
 .job-header {
@@ -383,12 +433,14 @@ body {
 
 .job-tag.type {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-primary);
+    border: 1px solid var(--primary-hover);
 }
 
 .job-tag.direction {
     background: var(--warning-color);
-    color: white;
+    color: var(--text-primary);
+    border: 1px solid var(--primary-hover);
 }
 
 .job-info {
@@ -451,10 +503,11 @@ body {
 
 /* 页脚 */
 .footer {
-    background: var(--text-primary);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 50%, var(--accent-color) 100%);
+    color: var(--text-primary);
     padding: 2rem 1rem 1rem;
     margin-top: 2rem;
+    box-shadow: var(--shadow-lg);
 }
 
 .footer-container {
@@ -472,7 +525,8 @@ body {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: white;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .footer-section ul {
@@ -487,8 +541,8 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 1rem;
-    border-top: 1px solid #374151;
-    opacity: 0.8;
+    border-top: 1px solid var(--primary-dark);
+    opacity: 0.9;
 }
 
 /* 响应式设计 */

@@ -92,3 +92,61 @@
 2025-09-17 05:17:52,589 - main_crawler - INFO - 清理 7 天前的数据文件...
 2025-09-17 05:17:52,590 - main_crawler - INFO - 没有需要清理的旧文件
 2025-09-17 05:17:52,590 - main_crawler - INFO - ✅ 爬虫系统运行完成
+2025-09-17 06:18:06,654 - main_crawler - INFO - 🚀 启动内推码爬虫系统
+2025-09-17 06:18:06,655 - main_crawler - INFO - 开始运行所有爬虫...
+2025-09-17 06:18:06,655 - main_crawler - INFO - 运行 牛客 爬虫...
+2025-09-17 06:18:06,655 - crawler.牛客 - INFO - 开始爬取 牛客 数据...
+2025-09-17 06:18:06,655 - crawler.牛客 - INFO - 爬取页面: /discuss/tag/640
+2025-09-17 06:18:08,682 - crawler.牛客 - INFO - 爬取页面: /discuss/tag/639
+2025-09-17 06:18:11,642 - crawler.牛客 - INFO - 爬取页面: /discuss/tag/641
+2025-09-17 06:18:14,416 - crawler.牛客 - INFO - 没有新职位需要保存
+2025-09-17 06:18:14,416 - crawler.牛客 - INFO - 牛客 爬取完成: 获取 15 个职位，新增 0 个，耗时 7.76 秒
+2025-09-17 06:18:14,416 - main_crawler - INFO - 牛客 爬虫完成，获取 15 个职位
+2025-09-17 06:18:16,418 - main_crawler - INFO - 运行 力扣 爬虫...
+2025-09-17 06:18:16,419 - crawler.力扣 - INFO - 开始爬取 力扣 数据...
+2025-09-17 06:18:16,419 - crawler.力扣 - INFO - 爬取话题: interview
+2025-09-17 06:18:20,383 - crawler.力扣 - INFO - 爬取话题: career
+2025-09-17 06:18:22,603 - crawler.力扣 - INFO - 爬取话题: internship
+2025-09-17 06:18:25,927 - crawler.力扣 - INFO - 保存了 15 个新职位到 data/力扣_jobs_20250917.json
+2025-09-17 06:18:25,927 - crawler.力扣 - INFO - 力扣 爬取完成: 获取 15 个职位，新增 15 个，耗时 9.51 秒
+2025-09-17 06:18:25,927 - main_crawler - INFO - 力扣 爬虫完成，获取 15 个职位
+2025-09-17 06:18:27,930 - main_crawler - INFO - 运行 小红书 爬虫...
+2025-09-17 06:18:27,930 - crawler.小红书 - INFO - 开始爬取 小红书 数据...
+2025-09-17 06:18:27,930 - crawler.小红书 - INFO - 搜索关键词: 内推
+2025-09-17 06:18:30,933 - crawler.小红书 - INFO - 搜索关键词: 校招
+2025-09-17 06:18:34,167 - crawler.小红书 - INFO - 搜索关键词: 社招
+2025-09-17 06:18:36,737 - crawler.小红书 - INFO - 搜索关键词: 实习
+2025-09-17 06:18:40,452 - crawler.小红书 - INFO - 搜索关键词: 求职
+2025-09-17 06:18:42,879 - crawler.小红书 - INFO - 搜索关键词: 找工作
+2025-09-17 06:18:46,263 - crawler.小红书 - INFO - 保存了 29 个新职位到 data/小红书_jobs_20250917.json
+2025-09-17 06:18:46,264 - crawler.小红书 - INFO - 小红书 爬取完成: 获取 30 个职位，新增 29 个，耗时 18.33 秒
+2025-09-17 06:18:46,264 - main_crawler - INFO - 小红书 爬虫完成，获取 30 个职位
+2025-09-17 06:18:48,266 - main_crawler - INFO - 运行 脉脉 爬虫...
+2025-09-17 06:18:48,267 - crawler.脉脉 - INFO - 开始爬取 脉脉 数据...
+2025-09-17 06:18:48,267 - crawler.脉脉 - INFO - 爬取板块: job_referral
+2025-09-17 06:18:52,053 - crawler.脉脉 - INFO - 爬取板块: campus_recruit
+2025-09-17 06:18:55,492 - crawler.脉脉 - INFO - 爬取板块: social_recruit
+2025-09-17 06:18:59,358 - crawler.脉脉 - INFO - 爬取板块: internship
+2025-09-17 06:19:01,731 - crawler.脉脉 - INFO - 保存了 20 个新职位到 data/脉脉_jobs_20250917.json
+2025-09-17 06:19:01,731 - crawler.脉脉 - INFO - 脉脉 爬取完成: 获取 20 个职位，新增 20 个，耗时 13.46 秒
+2025-09-17 06:19:01,731 - main_crawler - INFO - 脉脉 爬虫完成，获取 20 个职位
+2025-09-17 06:19:03,733 - main_crawler - INFO - 运行 真实数据 爬虫...
+2025-09-17 06:19:03,734 - crawler.真实数据爬虫 - INFO - 开始爬取 真实数据爬虫 数据...
+2025-09-17 06:19:03,734 - crawler.真实数据爬虫 - INFO - 正在爬取牛客网: https://www.nowcoder.com/discuss/tag/640?type=2&order=0&page=1
+2025-09-17 06:19:09,619 - crawler.真实数据爬虫 - WARNING - 请求被拦截: https://www.nowcoder.com/discuss/tag/640?type=2&order=0&page=1
+2025-09-17 06:19:09,619 - crawler.真实数据爬虫 - INFO - 正在爬取牛客网: https://www.nowcoder.com/discuss/tag/639?type=2&order=0&page=1
+2025-09-17 06:19:13,804 - crawler.真实数据爬虫 - WARNING - 请求被拦截: https://www.nowcoder.com/discuss/tag/639?type=2&order=0&page=1
+2025-09-17 06:19:13,804 - crawler.真实数据爬虫 - WARNING - 真实爬取失败，返回增强模拟数据
+2025-09-17 06:19:13,808 - crawler.真实数据爬虫 - INFO - 保存了 50 个新职位到 data/真实数据爬虫_jobs_20250917.json
+2025-09-17 06:19:13,808 - crawler.真实数据爬虫 - INFO - 真实数据爬虫 爬取完成: 获取 50 个职位，新增 50 个，耗时 10.07 秒
+2025-09-17 06:19:13,809 - main_crawler - INFO - 真实数据 爬虫完成，获取 50 个职位
+2025-09-17 06:19:15,811 - main_crawler - INFO - 所有爬虫运行完成，总共获取 130 个职位，耗时 69.16 秒
+2025-09-17 06:19:15,811 - main_crawler - INFO - 开始合并和保存数据...
+2025-09-17 06:19:15,833 - main_crawler - INFO - 数据保存完成: 130 个职位
+2025-09-17 06:19:15,834 - main_crawler - INFO - 爬虫数据文件: data/all_jobs_20250917.json
+2025-09-17 06:19:15,834 - main_crawler - INFO - 前端数据文件: ../data/jobs.json
+2025-09-17 06:19:15,834 - main_crawler - INFO - 生成统计信息...
+2025-09-17 06:19:15,836 - main_crawler - INFO - 统计信息已保存到: ../data/statistics.json
+2025-09-17 06:19:15,837 - main_crawler - INFO - 清理 7 天前的数据文件...
+2025-09-17 06:19:15,838 - main_crawler - INFO - 没有需要清理的旧文件
+2025-09-17 06:19:15,838 - main_crawler - INFO - ✅ 爬虫系统运行完成

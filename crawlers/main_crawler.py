@@ -22,6 +22,7 @@ from nowcoder_crawler import NowcoderCrawler
 from leetcode_crawler import LeetcodeCrawler
 from xiaohongshu_crawler import XiaohongshuCrawler
 from maimai_crawler import MaimaiCrawler
+from real_data_crawler import RealDataCrawler
 
 class MainCrawler:
     """主爬虫管理器"""
@@ -32,7 +33,8 @@ class MainCrawler:
             '牛客': NowcoderCrawler(),
             '力扣': LeetcodeCrawler(),
             '小红书': XiaohongshuCrawler(),
-            '脉脉': MaimaiCrawler()
+            '脉脉': MaimaiCrawler(),
+            '真实数据': RealDataCrawler()  # 新增真实数据爬虫
         }
         
         # 确保数据目录存在

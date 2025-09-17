@@ -1,0 +1,8 @@
+2025-09-17 05:50:42,689 - crawler.真实数据爬虫 - INFO - 开始爬取 真实数据爬虫 数据...
+2025-09-17 05:50:42,689 - crawler.真实数据爬虫 - INFO - 正在爬取牛客网: https://www.nowcoder.com/discuss/tag/640?type=2&order=0&page=1
+2025-09-17 05:50:49,388 - crawler.真实数据爬虫 - WARNING - 请求被拦截: https://www.nowcoder.com/discuss/tag/640?type=2&order=0&page=1
+2025-09-17 05:50:49,388 - crawler.真实数据爬虫 - INFO - 正在爬取牛客网: https://www.nowcoder.com/discuss/tag/639?type=2&order=0&page=1
+2025-09-17 05:50:54,029 - crawler.真实数据爬虫 - WARNING - 请求被拦截: https://www.nowcoder.com/discuss/tag/639?type=2&order=0&page=1
+2025-09-17 05:50:54,029 - crawler.真实数据爬虫 - WARNING - 真实爬取失败，返回增强模拟数据
+2025-09-17 05:50:54,033 - crawler.真实数据爬虫 - INFO - 保存了 50 个新职位到 data/真实数据爬虫_jobs_20250917.json
+2025-09-17 05:50:54,034 - crawler.真实数据爬虫 - INFO - 真实数据爬虫 爬取完成: 获取 50 个职位，新增 50 个，耗时 11.34 秒

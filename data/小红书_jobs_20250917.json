@@ -970,5 +970,475 @@
       "Python编程能力",
       "数据分析能力"
     ]
+  },
+  {
+    "id": 1758089917786,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20257106",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089915492,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20255715",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089909008,
+    "title": "移动端前端工程师",
+    "company": "阿里巴巴",
+    "type": "实习",
+    "direction": "前端",
+    "source": "小红书",
+    "code": "AL20256002",
+    "date": "2025-09-17",
+    "description": "阿里淘宝前端团队招实习生👩‍💻 主要做移动端开发，技术栈React+TypeScript。要求熟悉前端基础，有项目经验。实习期6个月，有转正机会！",
+    "requirements": [
+      "熟悉前端基础",
+      "React开发经验",
+      "TypeScript开发经验"
+    ]
+  },
+  {
+    "id": 1758089915006,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20251479",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089913813,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20251463",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
+  },
+  {
+    "id": 1758089917809,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20251925",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089916894,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20256631",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089916369,
+    "title": "移动端前端工程师",
+    "company": "阿里巴巴",
+    "type": "实习",
+    "direction": "前端",
+    "source": "小红书",
+    "code": "AL20252488",
+    "date": "2025-09-17",
+    "description": "阿里淘宝前端团队招实习生👩‍💻 主要做移动端开发，技术栈React+TypeScript。要求熟悉前端基础，有项目经验。实习期6个月，有转正机会！",
+    "requirements": [
+      "熟悉前端基础",
+      "React开发经验",
+      "TypeScript开发经验"
+    ]
+  },
+  {
+    "id": 1758089913529,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20259597",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089920535,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20255552",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
+  },
+  {
+    "id": 1758089922829,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20252582",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089922112,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20252813",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089919349,
+    "title": "移动端前端工程师",
+    "company": "阿里巴巴",
+    "type": "实习",
+    "direction": "前端",
+    "source": "小红书",
+    "code": "AL20259840",
+    "date": "2025-09-17",
+    "description": "阿里淘宝前端团队招实习生👩‍💻 主要做移动端开发，技术栈React+TypeScript。要求熟悉前端基础，有项目经验。实习期6个月，有转正机会！",
+    "requirements": [
+      "熟悉前端基础",
+      "React开发经验",
+      "TypeScript开发经验"
+    ]
+  },
+  {
+    "id": 1758089923377,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20253187",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089916714,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20257869",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
+  },
+  {
+    "id": 1758089921080,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20255241",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089917781,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20256243",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089917826,
+    "title": "移动端前端工程师",
+    "company": "阿里巴巴",
+    "type": "实习",
+    "direction": "前端",
+    "source": "小红书",
+    "code": "AL20257825",
+    "date": "2025-09-17",
+    "description": "阿里淘宝前端团队招实习生👩‍💻 主要做移动端开发，技术栈React+TypeScript。要求熟悉前端基础，有项目经验。实习期6个月，有转正机会！",
+    "requirements": [
+      "熟悉前端基础",
+      "React开发经验",
+      "TypeScript开发经验"
+    ]
+  },
+  {
+    "id": 1758089926052,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20255319",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089919839,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20257756",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
+  },
+  {
+    "id": 1758089925757,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20251981",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089924469,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20251872",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089925816,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20259889",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089926630,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20252840",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
+  },
+  {
+    "id": 1758089928204,
+    "title": "推荐算法工程师",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "算法",
+    "source": "小红书",
+    "code": "TT20258651",
+    "date": "2025-09-17",
+    "description": "姐妹们！字节跳动算法岗位开放申请啦🎉 负责推荐算法优化，要求计算机相关专业，有深度学习项目经验。工作地点：北京/上海。福利超好的哦～",
+    "requirements": [
+      "有深度学习项目经验"
+    ]
+  },
+  {
+    "id": 1758089927067,
+    "title": "数据分析师",
+    "company": "腾讯",
+    "type": "校招",
+    "direction": "数据",
+    "source": "小红书",
+    "code": "TX20257036",
+    "date": "2025-09-17",
+    "description": "腾讯微信团队招产品经理啦！主要负责用户体验优化和产品功能设计。要求：产品思维强，有数据分析能力，沟通能力佳。base深圳，氛围很棒！",
+    "requirements": [
+      "良好的沟通能力",
+      "数据分析能力",
+      "产品思维能力"
+    ]
+  },
+  {
+    "id": 1758089927290,
+    "title": "移动端前端工程师",
+    "company": "阿里巴巴",
+    "type": "实习",
+    "direction": "前端",
+    "source": "小红书",
+    "code": "AL20259555",
+    "date": "2025-09-17",
+    "description": "阿里淘宝前端团队招实习生👩‍💻 主要做移动端开发，技术栈React+TypeScript。要求熟悉前端基础，有项目经验。实习期6个月，有转正机会！",
+    "requirements": [
+      "熟悉前端基础",
+      "React开发经验",
+      "TypeScript开发经验"
+    ]
+  },
+  {
+    "id": 1758089931384,
+    "title": "后端开发工程师(订单系统)",
+    "company": "美团",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "MT20258671",
+    "date": "2025-09-17",
+    "description": "美团外卖技术团队招后端开发工程师，主要负责订单系统开发。要求3年以上Java经验，熟悉Spring Boot、MySQL、Redis等。薪资可谈！",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot、MySQL、Redis等",
+      "Java开发经验",
+      "Spring Boot框架经验",
+      "数据库操作经验"
+    ]
+  },
+  {
+    "id": 1758089928695,
+    "title": "后端开发工程师",
+    "company": "小红书",
+    "type": "社招",
+    "direction": "后端",
+    "source": "小红书",
+    "code": "XHS20258025",
+    "date": "2025-09-17",
+    "description": "小红书数据团队招数据分析师啦💕 负责用户行为分析和商业数据挖掘。要求熟悉SQL、Python，有统计学背景优先。工作环境很棒，女生比例高！",
+    "requirements": [
+      "熟悉SQL、Python",
+      "SQL查询能力",
+      "Python编程能力",
+      "数据分析能力"
+    ]
   }
 ]

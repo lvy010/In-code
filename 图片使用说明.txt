@@ -1,0 +1,26 @@
+📁 图片使用说明
+
+要使用您的 page.png 作为网站背景，请按以下步骤操作：
+
+1. 将您的 page.png 文件放置在项目根目录下：
+   /root/In-code/page.png
+
+2. 确保图片文件名正确：page.png（全小写）
+
+3. 推荐的图片规格：
+   - 分辨率：1920x1080 或更高
+   - 格式：PNG 或 JPG
+   - 文件大小：建议小于2MB以确保加载速度
+
+4. 如果您的图片文件名不是 page.png，请修改以下文件：
+   css/style.css 第96行，将 url('page.png') 改为您的图片文件名
+
+5. 重启服务器查看效果：
+   python start_server.py
+
+当前状态：
+- ✅ CSS已配置为使用 page.png
+- ✅ 所有emoji已从网页中移除
+- ⚠️  需要您提供 page.png 文件
+
+如果没有 page.png 文件，网站将显示蓝色渐变背景作为备用方案。
