@@ -1,6 +1,7 @@
 // 全局状态管理
 class JobManager {
     constructor() {
+        this.dataManager = new DataManager();
         this.jobs = [];
         this.filteredJobs = [];
         this.filters = {
@@ -14,100 +15,25 @@ class JobManager {
     }
 
     async init() {
+        this.showLoading(true);
         await this.loadJobs();
         this.bindEvents();
         this.renderJobs();
         this.updateStats();
+        this.showLoading(false);
     }
 
     // 加载职位数据
     async loadJobs() {
         try {
-            // 模拟数据，实际会从爬虫数据文件加载
-            this.jobs = await this.loadSampleData();
+            // 使用数据管理器加载数据
+            this.jobs = await this.dataManager.loadData();
             this.filteredJobs = [...this.jobs];
+            console.log(`成功加载 ${this.jobs.length} 个职位数据`);
         } catch (error) {
             console.error('加载数据失败:', error);
             this.showError('数据加载失败，请稍后重试');
         }
-    }
-
-    // 模拟数据生成
-    async loadSampleData() {
-        return [
-            {
-                id: 1,
-                title: '前端开发工程师',
-                company: '字节跳动',
-                type: '校招',
-                direction: '前端',
-                source: '牛客',
-                code: 'TT2025001',
-                date: '2025-09-15',
-                description: '负责抖音前端开发，要求熟悉React/Vue',
-                requirements: ['本科及以上学历', '熟悉JavaScript', '有项目经验']
-            },
-            {
-                id: 2,
-                title: '后端开发工程师',
-                company: '腾讯',
-                type: '社招',
-                direction: '后端',
-                source: '力扣',
-                code: 'TX2025002',
-                date: '2025-09-14',
-                description: '负责微信后端服务开发，要求熟悉Java/Go',
-                requirements: ['3年以上工作经验', '熟悉Spring Boot', '有高并发经验']
-            },
-            {
-                id: 3,
-                title: '算法工程师',
-                company: '阿里巴巴',
-                type: '校招',
-                direction: '算法',
-                source: '小红书',
-                code: 'AL2025003',
-                date: '2025-09-13',
-                description: '负责推荐算法研发，要求有机器学习基础',
-                requirements: ['硕士及以上学历', '熟悉Python', '有算法竞赛经验']
-            },
-            {
-                id: 4,
-                title: '产品经理',
-                company: '美团',
-                type: '实习',
-                direction: '产品',
-                source: '脉脉',
-                code: 'MT2025004',
-                date: '2025-09-12',
-                description: '负责外卖产品功能设计和优化',
-                requirements: ['在校学生', '有产品思维', '沟通能力强']
-            },
-            {
-                id: 5,
-                title: '数据分析师',
-                company: '百度',
-                type: '社招',
-                direction: '数据',
-                source: '牛客',
-                code: 'BD2025005',
-                date: '2025-09-11',
-                description: '负责用户行为数据分析和商业洞察',
-                requirements: ['2年以上经验', '熟悉SQL/Python', '有BI工具经验']
-            },
-            {
-                id: 6,
-                title: '测试工程师',
-                company: '网易',
-                type: '校招',
-                direction: '测试',
-                source: '力扣',
-                code: 'WY2025006',
-                date: '2025-09-10',
-                description: '负责游戏产品的测试工作',
-                requirements: ['本科及以上学历', '细心负责', '有游戏经验优先']
-            }
-        ];
     }
 
     // 绑定事件
@@ -162,36 +88,15 @@ class JobManager {
 
     // 应用筛选
     applyFilters() {
-        this.filteredJobs = this.jobs.filter(job => {
-            const typeMatch = this.filters.type === 'all' || job.type === this.filters.type;
-            const directionMatch = this.filters.direction === 'all' || job.direction === this.filters.direction;
-            const sourceMatch = this.filters.source === 'all' || job.source === this.filters.source;
-            const searchMatch = this.filters.search === '' || 
-                               job.title.toLowerCase().includes(this.filters.search) ||
-                               job.company.toLowerCase().includes(this.filters.search) ||
-                               job.code.toLowerCase().includes(this.filters.search);
-
-            return typeMatch && directionMatch && sourceMatch && searchMatch;
-        });
-
+        // 使用数据管理器的筛选功能
+        this.filteredJobs = this.dataManager.filterJobs(this.filters);
         this.applySorting();
     }
 
     // 应用排序
     applySorting() {
-        this.filteredJobs.sort((a, b) => {
-            switch (this.sortBy) {
-                case 'date':
-                    return new Date(b.date) - new Date(a.date);
-                case 'company':
-                    return a.company.localeCompare(b.company);
-                case 'position':
-                    return a.title.localeCompare(b.title);
-                default:
-                    return 0;
-            }
-        });
-
+        // 使用数据管理器的排序功能
+        this.filteredJobs = this.dataManager.sortJobs(this.filteredJobs, this.sortBy);
         this.renderJobs();
     }
 
@@ -311,11 +216,17 @@ class JobManager {
         const totalJobs = document.getElementById('totalJobs');
         const todayUpdate = document.getElementById('todayUpdate');
 
-        totalJobs.textContent = this.jobs.length;
+        // 使用数据管理器的统计数据
+        const stats = this.dataManager.getStatistics();
         
-        const today = new Date().toISOString().split('T')[0];
-        const todayJobs = this.jobs.filter(job => job.date === today).length;
-        todayUpdate.textContent = todayJobs;
+        totalJobs.textContent = stats.total_jobs || this.jobs.length;
+        todayUpdate.textContent = stats.today_jobs || 0;
+
+        // 更新页面标题的更新时间（如果有的话）
+        const updateTime = this.dataManager.getLastUpdateTime();
+        if (updateTime) {
+            console.log(`数据最后更新时间: ${updateTime}`);
+        }
     }
 
     // 刷新数据
@@ -327,8 +238,9 @@ class JobManager {
         refreshBtn.disabled = true;
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // 模拟API调用
-            await this.loadJobs();
+            // 使用数据管理器刷新数据
+            this.jobs = await this.dataManager.refreshData();
+            this.filteredJobs = [...this.jobs];
             this.applyFilters();
             this.updateStats();
             this.showToast('数据已更新');
@@ -337,6 +249,14 @@ class JobManager {
         } finally {
             refreshBtn.innerHTML = originalHTML;
             refreshBtn.disabled = false;
+        }
+    }
+
+    // 显示/隐藏加载状态
+    showLoading(show) {
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.style.display = show ? 'block' : 'none';
         }
     }
 

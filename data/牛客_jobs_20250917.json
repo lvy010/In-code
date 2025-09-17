@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1758084884108,
+    "title": "字节跳动码",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "前端",
+    "source": "牛客",
+    "code": "TT2025001",
+    "date": "2025-09-17",
+    "description": "字节跳动前端开发工程师内推，要求熟悉React/Vue，有项目经验优先",
+    "requirements": [
+      "熟悉React/Vue"
+    ]
+  },
+  {
+    "id": 1758084877759,
+    "title": "后端开发工程师",
+    "company": "腾讯",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "TX2025002",
+    "date": "2025-09-17",
+    "description": "腾讯微信事业群后端开发，要求3年以上Java经验，熟悉Spring Boot",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot"
+    ]
+  },
+  {
+    "id": 1758084880569,
+    "title": "算法工程师",
+    "company": "阿里巴巴",
+    "type": "校招",
+    "direction": "算法",
+    "source": "牛客",
+    "code": "AL2025003",
+    "date": "2025-09-17",
+    "description": "淘宝推荐算法团队，要求硕士学历，有机器学习项目经验",
+    "requirements": [
+      "有机器学习基础",
+      "熟悉Python/C++",
+      "良好的数学功底"
+    ]
+  },
+  {
+    "id": 1758084878547,
+    "title": "产品经理",
+    "company": "美团",
+    "type": "实习",
+    "direction": "数据",
+    "source": "牛客",
+    "code": "MT2025004",
+    "date": "2025-09-17",
+    "description": "美团外卖产品团队实习生招聘，要求有产品思维和数据分析能力",
+    "requirements": [
+      "本科及以上学历",
+      "良好的沟通能力",
+      "有相关项目经验"
+    ]
+  },
+  {
+    "id": 1758084877419,
+    "title": "数据分析师",
+    "company": "百度",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "BD2025005",
+    "date": "2025-09-17",
+    "description": "百度搜索部门数据分析师，要求熟悉SQL/Python，有BI工具经验",
+    "requirements": [
+      "熟悉SQL/Python"
+    ]
+  },
+  {
+    "id": 1758084883754,
+    "title": "字节跳动码",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "前端",
+    "source": "牛客",
+    "code": "TT2025001",
+    "date": "2025-09-17",
+    "description": "字节跳动前端开发工程师内推，要求熟悉React/Vue，有项目经验优先",
+    "requirements": [
+      "熟悉React/Vue"
+    ]
+  },
+  {
+    "id": 1758084879763,
+    "title": "后端开发工程师",
+    "company": "腾讯",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "TX2025002",
+    "date": "2025-09-17",
+    "description": "腾讯微信事业群后端开发，要求3年以上Java经验，熟悉Spring Boot",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot"
+    ]
+  },
+  {
+    "id": 1758084881741,
+    "title": "算法工程师",
+    "company": "阿里巴巴",
+    "type": "校招",
+    "direction": "算法",
+    "source": "牛客",
+    "code": "AL2025003",
+    "date": "2025-09-17",
+    "description": "淘宝推荐算法团队，要求硕士学历，有机器学习项目经验",
+    "requirements": [
+      "有机器学习基础",
+      "熟悉Python/C++",
+      "良好的数学功底"
+    ]
+  },
+  {
+    "id": 1758084883776,
+    "title": "产品经理",
+    "company": "美团",
+    "type": "实习",
+    "direction": "数据",
+    "source": "牛客",
+    "code": "MT2025004",
+    "date": "2025-09-17",
+    "description": "美团外卖产品团队实习生招聘，要求有产品思维和数据分析能力",
+    "requirements": [
+      "本科及以上学历",
+      "良好的沟通能力",
+      "有相关项目经验"
+    ]
+  },
+  {
+    "id": 1758084882568,
+    "title": "数据分析师",
+    "company": "百度",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "BD2025005",
+    "date": "2025-09-17",
+    "description": "百度搜索部门数据分析师，要求熟悉SQL/Python，有BI工具经验",
+    "requirements": [
+      "熟悉SQL/Python"
+    ]
+  },
+  {
+    "id": 1758084885750,
+    "title": "字节跳动码",
+    "company": "字节跳动",
+    "type": "校招",
+    "direction": "前端",
+    "source": "牛客",
+    "code": "TT2025001",
+    "date": "2025-09-17",
+    "description": "字节跳动前端开发工程师内推，要求熟悉React/Vue，有项目经验优先",
+    "requirements": [
+      "熟悉React/Vue"
+    ]
+  },
+  {
+    "id": 1758084887642,
+    "title": "后端开发工程师",
+    "company": "腾讯",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "TX2025002",
+    "date": "2025-09-17",
+    "description": "腾讯微信事业群后端开发，要求3年以上Java经验，熟悉Spring Boot",
+    "requirements": [
+      "3年以上Java经验",
+      "熟悉Spring Boot"
+    ]
+  },
+  {
+    "id": 1758084890306,
+    "title": "算法工程师",
+    "company": "阿里巴巴",
+    "type": "校招",
+    "direction": "算法",
+    "source": "牛客",
+    "code": "AL2025003",
+    "date": "2025-09-17",
+    "description": "淘宝推荐算法团队，要求硕士学历，有机器学习项目经验",
+    "requirements": [
+      "有机器学习基础",
+      "熟悉Python/C++",
+      "良好的数学功底"
+    ]
+  },
+  {
+    "id": 1758084884632,
+    "title": "产品经理",
+    "company": "美团",
+    "type": "实习",
+    "direction": "数据",
+    "source": "牛客",
+    "code": "MT2025004",
+    "date": "2025-09-17",
+    "description": "美团外卖产品团队实习生招聘，要求有产品思维和数据分析能力",
+    "requirements": [
+      "本科及以上学历",
+      "良好的沟通能力",
+      "有相关项目经验"
+    ]
+  },
+  {
+    "id": 1758084887144,
+    "title": "数据分析师",
+    "company": "百度",
+    "type": "社招",
+    "direction": "后端",
+    "source": "牛客",
+    "code": "BD2025005",
+    "date": "2025-09-17",
+    "description": "百度搜索部门数据分析师，要求熟悉SQL/Python，有BI工具经验",
+    "requirements": [
+      "熟悉SQL/Python"
+    ]
+  }
+]
