@@ -545,32 +545,71 @@ body {
     opacity: 0.9;
 }
 
-/* 响应式设计 */
+/* 响应式设计优化 */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         height: auto;
         padding: 1rem;
+        gap: 1rem;
     }
 
     .nav-menu {
-        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-slogan {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .hero-stats {
-        gap: 1.5rem;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-around;
     }
 
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .disclaimer-banner {
+        margin: 1rem auto;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
     }
 
     .filter-grid {
         gap: 1rem;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     .section-header {
@@ -582,15 +621,119 @@ body {
     .section-actions {
         width: 100%;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .jobs-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .job-card {
+        padding: 1rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .job-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 1.5rem;
+    }
+}
+
+/* 筛选结果显示 */
+.filter-result {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideDown 0.3s ease-out;
+}
+
+.filter-result i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.clear-filters {
+    background: var(--danger-color);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clear-filters:hover {
+    background: #e74c3c;
+    transform: translateY(-1px);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 性能优化相关样式 */
+.job-card {
+    contain: content;
+}
+
+.chart-card canvas {
+    contain: strict;
+}
+
+/* 无障碍功能增强 */
+.filter-btn:focus,
+.refresh-btn:focus,
+.job-card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 打印样式 */
+@media print {
+    .navbar,
+    .filter-section,
+    .data-visualization-section,
+    .footer {
+        display: none;
+    }
+    
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .job-card {
+        break-inside: avoid;
+        margin-bottom: 1rem;
     }
 }
 

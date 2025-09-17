@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>内推宝典 - 计算机求职内推信息整合平台</title>
+    <meta name="description" content="专业的计算机求职内推信息整合平台，聚合牛客、力扣、小红书、脉脉等平台的最新内推信息">
+    <meta name="keywords" content="内推,求职,计算机,校招,社招,实习,程序员,工程师">
+    <meta name="author" content="内推宝典">
+    
+    <!-- PWA相关 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#a8d8ea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="内推宝典">
+    
+    <!-- 图标 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <!-- 样式 -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="js/data-manager.js" as="script">
+    <link rel="preload" href="data/jobs.json" as="fetch" crossorigin="anonymous">
 </head>
 <body>
     <!-- 顶部导航 -->
@@ -176,7 +197,226 @@
         </div>
     </footer>
 
+    <!-- JavaScript模块 -->
     <script src="js/data-manager.js"></script>
+    <script src="js/advanced-search.js"></script>
+    <script src="js/data-visualization.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- PWA和Service Worker -->
+    <script>
+        // 注册Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW注册成功:', registration);
+                        
+                        // 检查更新
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // 有新版本可用
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.log('SW注册失败:', error);
+                    });
+                    
+                // 监听SW消息
+                navigator.serviceWorker.addEventListener('message', event => {
+                    if (event.data.type === 'DATA_UPDATED') {
+                        console.log('数据已更新');
+                        // 可以在这里刷新页面数据
+                    }
+                });
+            });
+        }
+        
+        // 显示更新通知
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'update-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span>发现新版本！</span>
+                    <button onclick="updateApp()">更新</button>
+                    <button onclick="dismissUpdate()">稍后</button>
+                </div>
+            `;
+            document.body.appendChild(notification);
+        }
+        
+        // 更新应用
+        function updateApp() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(registration => {
+                    if (registration && registration.waiting) {
+                        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        
+        // 关闭更新通知
+        function dismissUpdate() {
+            const notification = document.querySelector('.update-notification');
+            if (notification) {
+                notification.remove();
+            }
+        }
+        
+        // PWA安装提示
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+        
+        function showInstallPrompt() {
+            const installPrompt = document.createElement('div');
+            installPrompt.className = 'install-prompt';
+            installPrompt.innerHTML = `
+                <div class="prompt-content">
+                    <i class="fas fa-download"></i>
+                    <span>安装内推宝典应用到桌面</span>
+                    <button onclick="installApp()">安装</button>
+                    <button onclick="dismissInstall()">稍后</button>
+                </div>
+            `;
+            document.body.appendChild(installPrompt);
+        }
+        
+        async function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`用户选择: ${outcome}`);
+                deferredPrompt = null;
+                dismissInstall();
+            }
+        }
+        
+        function dismissInstall() {
+            const prompt = document.querySelector('.install-prompt');
+            if (prompt) {
+                prompt.remove();
+            }
+        }
+        
+        // 性能监控
+        window.addEventListener('load', () => {
+            // 记录页面加载性能
+            const perfData = performance.getEntriesByType('navigation')[0];
+            console.log('页面加载时间:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+            
+            // 初始化高级功能
+            setTimeout(() => {
+                if (window.DataManager && window.jobManager) {
+                    // 初始化高级搜索
+                    window.advancedSearch = new AdvancedSearch(window.jobManager.dataManager);
+                    
+                    // 初始化数据可视化
+                    window.dataVisualization = new DataVisualization(window.jobManager.dataManager);
+                }
+            }, 1000);
+        });
+        
+        // 键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + K: 快速搜索
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+            
+            // Esc: 关闭模态框
+            if (e.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal-overlay');
+                modals.forEach(modal => modal.remove());
+            }
+        });
+    </script>
+    
+    <!-- 更新通知样式 -->
+    <style>
+        .update-notification,
+        .install-prompt {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--surface-color);
+            border: 1px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .notification-content,
+        .prompt-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .update-notification button,
+        .install-prompt button {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .update-notification button:hover,
+        .install-prompt button:hover {
+            background: var(--primary-hover);
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .suggestion-item:hover {
+            background: var(--primary-light);
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+    </style>
 </body>
 </html>

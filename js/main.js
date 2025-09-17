@@ -298,8 +298,113 @@ class JobManager {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', () => {
-    new JobManager();
+    window.jobManager = new JobManager();
+    
+    // 监听高级筛选事件
+    document.addEventListener('advancedFilterApplied', (event) => {
+        console.log('应用高级筛选:', event.detail);
+        // 这里可以根据高级筛选条件更新数据显示
+        window.jobManager.applyAdvancedFilters(event.detail);
+    });
 });
+
+// 扩展JobManager类以支持高级功能
+JobManager.prototype.applyAdvancedFilters = function(filterData) {
+    // 应用高级筛选逻辑
+    let filteredJobs = this.jobs;
+    
+    // 薪资筛选
+    if (filterData.salaryMin && filterData.salaryMax) {
+        // 这里可以根据职位描述中的薪资信息进行筛选
+        // 由于是模拟数据，暂时跳过实际筛选
+    }
+    
+    // 城市筛选
+    if (filterData.cities && filterData.cities.length > 0) {
+        filteredJobs = filteredJobs.filter(job => 
+            filterData.cities.some(city => 
+                job.description.includes(city) || job.company.includes(city)
+            )
+        );
+    }
+    
+    // 学历筛选
+    if (filterData.education && !filterData.education.includes('不限')) {
+        filteredJobs = filteredJobs.filter(job =>
+            filterData.education.some(edu =>
+                job.requirements.some(req => req.includes(edu))
+            )
+        );
+    }
+    
+    // 工作经验筛选
+    if (filterData.experience && !filterData.experience.includes('不限')) {
+        filteredJobs = filteredJobs.filter(job =>
+            filterData.experience.some(exp =>
+                job.requirements.some(req => req.includes(exp)) ||
+                (exp === '应届' && job.type === '校招')
+            )
+        );
+    }
+    
+    // 更新显示
+    this.filteredJobs = filteredJobs;
+    this.renderJobs();
+    
+    // 显示筛选结果统计
+    this.showFilterResults(filteredJobs.length);
+};
+
+JobManager.prototype.showFilterResults = function(count) {
+    // 显示筛选结果
+    const existingResult = document.querySelector('.filter-result');
+    if (existingResult) {
+        existingResult.remove();
+    }
+    
+    const resultDiv = document.createElement('div');
+    resultDiv.className = 'filter-result';
+    resultDiv.innerHTML = `
+        <i class="fas fa-filter"></i>
+        <span>筛选结果: ${count} 个职位</span>
+        <button onclick="window.jobManager.clearFilters()" class="clear-filters">
+            <i class="fas fa-times"></i> 清除筛选
+        </button>
+    `;
+    
+    const jobsContainer = document.querySelector('.jobs-container');
+    jobsContainer.insertBefore(resultDiv, jobsContainer.firstChild);
+};
+
+JobManager.prototype.clearFilters = function() {
+    // 清除所有筛选条件
+    this.filters = {
+        type: 'all',
+        direction: 'all',
+        source: 'all',
+        search: ''
+    };
+    
+    this.filteredJobs = [...this.jobs];
+    this.renderJobs();
+    
+    // 移除筛选结果显示
+    const resultDiv = document.querySelector('.filter-result');
+    if (resultDiv) {
+        resultDiv.remove();
+    }
+    
+    // 重置搜索框
+    document.getElementById('searchInput').value = '';
+    
+    // 重置筛选按钮
+    document.querySelectorAll('.filter-btn.active').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelectorAll('.filter-btn[data-type="all"], .filter-btn[data-direction="all"], .filter-btn[data-source="all"]').forEach(btn => {
+        btn.classList.add('active');
+    });
+};
 
 // 添加模态框和提示框的CSS样式
 const additionalStyles = `
