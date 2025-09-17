@@ -298,13 +298,56 @@ class JobManager {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', () => {
+    // 初始化数据管理器
     window.jobManager = new JobManager();
+    
+    // 初始化路由系统 - 延迟初始化以确保依赖已加载
+    setTimeout(() => {
+        if (window.Router) {
+            window.router = new Router();
+        } else {
+            console.error('Router类未找到');
+        }
+    }, 100);
     
     // 监听高级筛选事件
     document.addEventListener('advancedFilterApplied', (event) => {
         console.log('应用高级筛选:', event.detail);
         // 这里可以根据高级筛选条件更新数据显示
-        window.jobManager.applyAdvancedFilters(event.detail);
+        if (window.jobManager) {
+            window.jobManager.applyAdvancedFilters(event.detail);
+        }
+    });
+    
+    // 监听页面加载事件
+    document.addEventListener('pageload', (event) => {
+        console.log('页面加载:', event.detail.route);
+        
+        // 根据页面类型初始化对应功能
+        switch (event.detail.route) {
+            case '#jobs':
+                // 职位列表页面的特殊处理
+                if (window.jobManager) {
+                    window.jobManager.initJobsPage();
+                }
+                break;
+            case '#search':
+                // 高级搜索页面的特殊处理
+                if (window.AdvancedSearch && window.jobManager) {
+                    setTimeout(() => {
+                        new window.AdvancedSearch(window.jobManager.dataManager);
+                    }, 100);
+                }
+                break;
+            case '#analytics':
+                // 数据分析页面的特殊处理
+                if (window.DataVisualization && window.jobManager) {
+                    setTimeout(() => {
+                        new window.DataVisualization(window.jobManager.dataManager);
+                    }, 100);
+                }
+                break;
+        }
     });
 });
 
